@@ -67,9 +67,8 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return Objects.equals(description, task.description);
+        return Objects.equals(description, task.description) && Objects.equals(dueTime, task.dueTime);
     }
-
     /**
      * Calcule le code de hachage en utilisant la description de la tâche.
      *
@@ -77,6 +76,7 @@ public class Task {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(description);
+        return Objects.hash(description, dueTime);
     }
+
 }
